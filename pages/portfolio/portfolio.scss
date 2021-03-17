@@ -1,0 +1,46 @@
+.portfolio {
+    height: 90vh;
+    margin: 5vh 0;
+    overflow: auto;
+    @include custom-scrollBar;
+    
+    .grid-3-columns {
+        height: 100%; 
+        grid-gap: 20px;
+        grid-template-columns: minmax(auto, 390px) minmax(auto, 390px) minmax(auto, 390px);
+        align-content: center;
+    }
+
+    article {
+        height: auto;
+        display: grid;
+        align-items: center;
+        
+        figure {
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
+
+.default-enter-active,
+.default-leave-active {
+    transition: opacity .6s ease-in-out, transform .6s ease-in-out;
+}
+
+.default-enter,
+.default-leave-to {
+    .breadcrumbs {
+        &:before, &:after {
+            height: 0;
+        }
+        .breadcrumb-item {
+            opacity: 0;
+        }
+    }
+}

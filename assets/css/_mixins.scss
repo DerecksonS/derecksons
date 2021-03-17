@@ -1,0 +1,73 @@
+@mixin theme($property, $color, $additionalPropertiesPositionIsFront: false, $additionalProperties: '') 
+{
+    $light: map-get($themes, $lightTheme);
+    $dark: map-get($themes, $darkTheme);
+    
+    @include themeProperty($light, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties);
+  
+    @media (prefers-color-scheme: dark) 
+    {
+        @include themeProperty($dark, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties);
+    }
+}
+
+@mixin themeProperty($theme, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties) 
+{
+    @if $additionalPropertiesPositionIsFront 
+    {
+        #{$property}: unquote($additionalProperties + ' ' + map-get($theme, $color));
+    } @else 
+    {
+        #{$property}: unquote(map-get($theme, $color) + ' ' + $additionalProperties);
+    }
+}
+
+
+
+@mixin dott-background {
+    background-color: transparent;
+    opacity: 1;
+    background-image: radial-gradient(#fff 1.45px, rgba(0,0,0,0) 1.45px);
+    background-size: 30px 30px;
+}
+
+
+@mixin custom-scrollBar {
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar {
+        width: 12px;
+        @include theme('background-color', $backgroundColor);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        @include theme('background-color', $backgroundColor);
+
+        border: 1px solid #fff;
+    }
+
+    @media only screen and (max-width: 768px) {
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: transparent;
+        }
+    }
+}
+
+
+@mixin title-page {
+    font-size: 30px;
+    margin:0 0 10px;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 15px;
+    }
+}

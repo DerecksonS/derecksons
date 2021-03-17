@@ -1,0 +1,50 @@
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include theme('background-color', $backgroundColor);
+    z-index: 9999;
+    font-family: sans-serif;
+    
+
+    .logo-loading {
+        width: 180px;
+        height: 70px;
+        top: 50%;
+        position: relative;
+        margin: 0 auto;
+
+        &:before {
+            content: '';
+            width: 60px;
+            height: 70px;
+            background: url('./../../static/img/layout/ico-logo-dereckson-partial.svg') no-repeat;
+            position: absolute;
+        }
+    
+        &:after {
+            content: '';
+            width: 60px;
+            height: 70px;
+            top: 0;
+            right: 0;
+            transform: rotate(180deg);
+            background: url('./../../static/img/layout/ico-logo-dereckson-partial.svg') no-repeat;
+            position: absolute;
+        }
+
+        span {
+            text-indent: -999em;
+            display: block;
+            width: 80px;
+            height: 100px;
+            top: -15px;
+            left: 50px;
+            background: url('./../../static/img/layout/ico-logo-dereckson-element.svg') no-repeat;
+            background-size: 80px auto;
+            position: absolute;
+        }
+    }
+}

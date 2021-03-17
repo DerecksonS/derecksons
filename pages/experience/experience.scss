@@ -1,0 +1,142 @@
+.grid-2-columns {
+    grid-template-columns: repeat(1, minmax(50%, 50%));
+    grid-gap: 70px;
+}
+
+.column-experience { 
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.column-skills {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.skill-and-client {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "skill-area"
+    "client-area";
+    grid-area: 1 / 2 / 2 / 3;
+    display: grid;
+}
+
+.skill-area { grid-area: skill-area; }
+
+.client-area { grid-area: client-area; }
+
+.experience {
+    .column-experience {
+        margin: 10vh 0;
+        max-height: 80vh;
+        overflow: auto;
+        @include custom-scrollBar;
+
+        h1 {
+            @include title-page;
+        }
+        article {
+            padding: 20px;
+            margin: 0 0 35px;
+            @include theme('background-color', $backgroundColorHighlight);
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    .skill-and-client {
+        height: 90vh;
+        align-items: center;
+        
+        .skill-area {
+            h1 {
+                @include title-page;
+            }
+            ul {
+                li {
+                    margin: 0 5px 0 0;
+                    display: inline-block;
+                    background: #fff;
+                    border-radius: 5px;
+                    padding: 2px;
+                    
+                    img {
+                        width: auto;
+                        height: 35px;
+                        display: block;
+                    }
+                }
+            }
+        }
+
+
+        .client-area {
+            ul {
+                li {
+                    margin: 0 0 0 10px;
+                    display: inline-block;
+                    padding: 5px;
+                    @include theme('background-color', $backgroundColorHighlight);
+                    overflow: hidden;
+                    border-radius: 7px;
+        
+                    &:first-child{
+                        margin: 0;
+                    }
+                    
+                    img {
+                        width: auto;
+                        height: 50px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .experience {
+        .grid-2-columns {
+            display: block;
+        }
+        .column-experience {
+            margin: 0;
+            overflow: inherit;
+            max-height: inherit;
+            grid-area: 1;
+            
+            article {
+                padding: 15px;
+                margin: 0 0 15px;
+                h2 {
+                    font-size: 14px;
+                }
+                h3 {
+                    margin: 10px 0;
+                }
+                h3, p {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+        }
+
+        .skill-and-client {
+            grid-area: 1;
+            
+            .skill-area {
+                p {
+                    font-size: 12px;
+                    line-height: 16px;
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+}

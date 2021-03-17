@@ -1,0 +1,124 @@
+.menu {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 100%;
+    
+    &-open {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav {
+        height: 200px;
+        padding: 0 35px;
+        a {
+            width: 100%;
+            margin: 0 0 20px;
+            font-size: 16px;
+            font-weight: 400;
+            display: block;
+            @include theme('color', $colorReverse);
+            text-decoration: none;
+            text-transform: uppercase;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+
+            &:hover {
+                opacity: 0.6;
+            }
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .menu {
+        &:before {
+            content: '';
+            position: fixed;
+            width: calc(100% - 15px);
+            top: 0;
+            right: 0;
+            height: 60px;
+            @include theme('background-color', $backgroundColor);
+            z-index: 98;
+        }
+
+        &-open {
+            width: 40px;
+            height: 4px;
+            position: fixed;
+            top: 30px;
+            right: 10px;
+            border: 0;
+            
+            transition-timing-function: ease;
+            transition-property: transform;
+            border-radius: 4px;
+            background-color: #fff;
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            z-index: 99;
+            transition: transform .15s cubic-bezier(.645,.045,.355,1),background-color 0s cubic-bezier(.645,.045,.355,1) .1s;
+
+            &:before, 
+            &:after {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 4px;
+                right: 0;
+                transition-timing-function: ease;
+                transition-duration: .15s;
+                transition-property: transform;
+                border-radius: 4px;
+                background-color: #fff;
+            }
+
+            &:before {
+                top: -10px;
+            }
+            &:after {
+                bottom: -10px;
+            }
+
+            &.opened {
+                transform: rotateX(180deg);
+                background-color: transparent!important;
+
+                &:before {
+                    transform: translate3d(0,10px,0) rotate(45deg);
+                }
+                &:after {
+                    transform: translate3d(0,-10px,0) rotate(-45deg);
+                }
+            }
+        }
+
+        nav {
+            width: calc(100vw - 15px);
+            height: 0;
+            padding-top: 25px;
+            overflow: hidden;
+            @include theme('background-color', $backgroundColor);
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            display: block;
+            z-index: 98;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            &.opened {
+                opacity: 1;
+                height: 200px;
+            }
+        }
+    }
+}

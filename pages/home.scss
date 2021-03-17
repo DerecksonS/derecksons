@@ -1,0 +1,97 @@
+.container {
+    &.full-home {
+        .aside-container {
+            min-width: 350px;
+        }
+    }
+    .home {
+        padding: 0;
+        background: url('../static/bg-dereckson-santana-frontend-developer.jpg') no-repeat center;
+        background-size: cover;
+        position: relative;
+    
+        h1 {
+            width: 100%;
+            max-width: 665px;
+            font-size: 100px;
+            margin-left: -150px;
+            font-weight: 800;
+            @include theme('color', $colorReverse);
+            text-transform: uppercase;
+        }
+    
+        .job-description {
+            width: 340px;
+            padding: 35px 35px 0 0;
+            top: 0;
+            right: 0;
+            text-align: right;
+            background: linear-gradient(27deg, rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 90%);
+            position: absolute;
+
+            h2 {
+                font-size: 20px;
+                line-height: 26px;
+                font-weight: 400;
+                color: #fff;
+
+            }
+
+            a {
+                height: 45px;
+                line-height: 45px;
+                padding: 0 35px;
+                color: #000;
+                font-weight: 400;
+                text-transform: uppercase;
+                background: #fff;
+                display: inline-block;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background 0.3s ease;
+                &:hover{
+                    background: #f2f2f2;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .full-home {
+        .menu {
+            &:before {
+                width: 100%;
+            }
+        }
+
+        .aside-container {
+            .logo {
+                left: 30px;
+            }
+        }
+    }
+
+    .main-container {
+        &.home {
+            h1 {
+                max-width: 100%;
+                margin: 0;
+                padding: 0 0 0 20px;
+                font-size: 50px;
+            }
+            .job-description {
+                width: 100%;
+                top: 50px;
+                background:linear-gradient(1deg, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.6) 90%);
+                h2 {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+}

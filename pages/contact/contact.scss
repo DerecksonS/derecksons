@@ -1,0 +1,119 @@
+.contact {
+    padding: 0 70px;
+    grid-area: main;
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 550px);
+
+    .grid-1-column {
+        grid-gap: 0;
+        // grid-template-columns: repeat(auto-fit, 600px);
+        justify-content: center;
+    }
+
+    .contact-form {
+        align-items: center;
+        
+        h1 {
+            @include title-page;
+        }
+        p {
+            margin: 30px 0;
+        }
+        h1, 
+        p {
+            text-align: center;
+        }
+        form {
+            label {
+                width: 100%;
+                margin: 0 0 25px;
+                position: relative;
+                display: block;
+
+                input, textarea {
+                    height: 55px;
+                    padding: 0 25px;
+                    color: #7b7f84;
+                    border: 1px solid #7b7f84;
+                    background: transparent;
+                    border-radius: 10px;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+                span, input, textarea {
+                    width: 100%;
+                }
+                textarea {
+                    padding: 20px;
+                    height: 150px;
+                }
+                span {
+                    width: auto;
+                    font-size: 10px;
+                    top: 5px;
+                    left: 25px;
+                    position: absolute;
+                }
+
+            }
+
+            button {
+                height: 45px;
+                line-height: 45px;
+                padding: 0 35px;
+                color: #000;
+                font-weight: 400;
+                text-transform: uppercase;
+                @include theme('background-color', $colorReverse);
+                @include theme('color', $backgroundColor);
+                
+                display: inline-block;
+                text-decoration: none;
+                border-radius: 5px;
+                border: 0;
+                transition: background 0.3s ease;
+                cursor: pointer;
+                
+                &:hover{
+                    background: #f2f2f2;
+                }
+
+                &.disabled {
+                    opacity: 0.6;
+                    cursor:not-allowed;
+                    pointer-events: none;
+                }
+            }
+            .msg-success {
+                float: right;
+                line-height: 45px;
+                color: #60cc2a;
+            }
+        }
+    }
+}
+
+.default-enter-active,
+.default-leave-active {
+    transition: opacity .6s ease-in-out, transform .6s ease-in-out;
+}
+
+.default-enter,
+.default-leave-to {
+    .breadcrumbs {
+        &:before, &:after {
+            height: 0;
+        }
+        .breadcrumb-item {
+            opacity: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact {
+        grid-template-columns: 100%;
+    }
+}

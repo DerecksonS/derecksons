@@ -1,0 +1,107 @@
+.about-me {
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        content: '';
+        width: 250px;
+        height: 250px;
+        top: 0;
+        right: -90px;
+        position: absolute;
+        transform: rotate(40deg);
+        @include dott-background;
+    }
+
+    .grid-3-columns {
+        height: 85%;
+        grid-gap: 70px;
+        grid-template-rows: repeat(1, minmax(auto, 100%));
+        align-content: center;
+        
+        .column {
+            transition: all 0.6s ease;
+            &:nth-child(2) {
+                margin-top: 70px;
+            }
+            figure {
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+
+            h1 {
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 400;
+                @include theme('color', $colorReverse);
+            }
+        }
+    }
+
+    .education {
+        h2 {
+            @include title-page;
+        }
+
+        &-item {
+            margin: 0 0 30px;
+
+            h3, h4, p {
+                font-weight: 400;
+                margin: 0;
+            }
+            h3 {
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+            h4 {
+                font-weight: 600;
+                font-size: 14px;
+            }
+            p {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+.default-enter-active,
+.default-leave-active {
+    transition: opacity .6s ease-in-out, transform .6s ease-in-out;
+}
+
+.default-enter,
+.default-leave-to {
+    .breadcrumbs {
+        &:before, &:after {
+            height: 0;
+        }
+        .breadcrumb-item {
+            opacity: 0;
+        }
+    }
+
+    .about-me {
+        .column {
+            opacity: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .about-me {
+        .grid-3-columns {
+            grid-gap: 0;
+            .column:nth-child(2),
+            .column:nth-child(3) {
+                margin-top: 20px;
+            }
+        }
+    }
+
+}

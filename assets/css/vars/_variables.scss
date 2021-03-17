@@ -1,0 +1,21 @@
+$lightTheme: 'light-theme';
+$darkTheme: 'dark-theme';
+
+
+$backgroundColor: 'background-color';
+$colorReverse: 'color-text';
+$backgroundColorHighlight: 'background-highlight';
+
+
+$themes: (
+    $lightTheme: (
+        $backgroundColor: #fafafb,
+        $colorReverse: #141b24,
+        $backgroundColorHighlight: #fff,
+    ),
+    $darkTheme: (
+        $backgroundColor: #141b23,
+        $colorReverse: #fff,
+        $backgroundColorHighlight: #10151b,
+    ),
+);
