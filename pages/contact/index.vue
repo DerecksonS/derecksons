@@ -11,7 +11,8 @@
                 <section class="contact-form">
                     <h1>Contact me</h1>
                     <p>For any question, or just to say hello, get in touch and contact us.</p>
-                    <form action="/contact/success"
+                    <form method="POST"
+                          action="/contact/success"
                           data-netifly="true"
                           data-netlify-recaptcha="true" 
                           netlify-honeypot="bot-field">
