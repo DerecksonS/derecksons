@@ -13,7 +13,7 @@
                     <p>For any question, or just to say hello, get in touch and contact us.</p>
                     <form method="POST"
                           action="/contact/success"
-                          data-netifly="true"
+                          data-netlify="true"
                           data-netlify-recaptcha="true" 
                           netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="Contact-me" />
