@@ -12,6 +12,8 @@
                     <h1>Contact me</h1>
                     <p>For any question, or just to say hello, get in touch and contact us.</p>
                     <form method="POST"
+                          id="contactMeForm"
+                          name="contactForm"
                           action="/contact/success"
                           data-netlify="true"
                           data-netlify-recaptcha="true" 
