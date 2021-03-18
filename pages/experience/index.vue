@@ -48,14 +48,14 @@
                             <p>I love writing code in a challenging environment with an emphasis on using best practices to develop high quality software requirements.</p>
                             <p>I enjoy learning new technologies and sharing findings with the team.</p>
                             <ul>
-                                <li><img src="img/layout/icon-html5.png" alt=""></li>
-                                <li><img src="img/layout/icon-css3.png" alt=""></li>
-                                <li><img src="img/layout/icon-javascript.png" alt=""></li>
-                                <li><img src="img/layout/icon-nodejs.png" alt=""></li>
-                                <li><img src="img/layout/icon-typescript.png" alt=""></li>
-                                <li><img src="img/layout/icon-github.png" alt=""></li>
-                                <li><img src="img/layout/icon-azure.png" alt=""></li>
-                                <li><img src="img/layout/icon-aws.png" alt=""></li>
+                                <li><img :src="`${baseURL}/img/layout/icon-html5.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/layout/icon-css3.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/layout/icon-javascript.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/layout/icon-nodejs.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/layout/icon-typescript.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/layout/icon-github.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/layout/icon-azure.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/layout/icon-aws.png`" alt=""></li>
                             </ul>       
                         </article>
                     </section>
@@ -65,9 +65,9 @@
                             <h1>My Client</h1>
                             <h2>My recents projects.</h2>
                             <ul>
-                                <li><img src="img/content/img-logo-frotcom-dereckson-santana.png" alt=""></li>
-                                <li><img src="img/content/img-logo-aubay-derekcson-santana.png" alt=""></li>
-                                <li><img src="img/content/img-logo-fishy-dereckson-santana.png" alt=""></li>
+                                <li><img :src="`${baseURL}/img/content/img-logo-frotcom-dereckson-santana.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/content/img-logo-aubay-derekcson-santana.png`" alt=""></li>
+                                <li><img :src="`${baseURL}/img/content/img-logo-fishy-dereckson-santana.png`" alt=""></li>
                             </ul>
                         </article>
                 </section>
