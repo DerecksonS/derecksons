@@ -14,7 +14,7 @@
                     <form method="POST"
                           id="contactMeForm"
                           name="contactForm"
-                          action="/contact/success"
+                          action="/contact/success/"
                           data-netlify="true"
                           data-netlify-recaptcha="true" 
                           netlify-honeypot="bot-field">
