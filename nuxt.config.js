@@ -2,6 +2,7 @@ let title = 'Dereckson Santana - Frontend Developer';
 let description = 'I am a Frontend Developer and tech lead with a vast experience in CSS3 and JavaScript, dedicated and enthusiastic with a strong technical knowledge and education.';
 
 export default {
+  target: 'static',
   // server: {
   //   port: 3000, // default: 3000
   //   host: '0.0.0.0' // default: localhost

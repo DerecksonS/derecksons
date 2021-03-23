@@ -15,6 +15,7 @@
                           id="contactMeForm"
                           name="contactForm"
                           data-netlify="true"
+                          action="/contact/success/"
                           data-netlify-recaptcha="true" 
                           data-netlify-honeypot="bot-field">
                         <input value="contactForm" name="contact" type="hidden" />
