@@ -3,6 +3,7 @@ let description = 'I am a Frontend Developer and tech lead with a vast experienc
 
 export default {
   target: 'static',
+  mode: 'universal',
   // server: {
   //   port: 3000, // default: 3000
   //   host: '0.0.0.0' // default: localhost
