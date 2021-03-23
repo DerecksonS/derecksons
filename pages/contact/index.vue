@@ -16,8 +16,8 @@
                           name="contactForm"
                           data-netlify="true"
                           data-netlify-recaptcha="true" 
-                          netlify-honeypot="bot-field">
-                        <input type="hidden" name="contactForm" value="Contact-me" />
+                          data-netlify-honeypot="bot-field">
+                        <input value="contactForm" name="contact" type="hidden" />
                         <label>
                             <span>Full name</span>
                             <input type="text" name="Full name" v-model="name">
