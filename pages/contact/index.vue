@@ -11,35 +11,37 @@
                 <section class="contact-form">
                     <h1>Contact me</h1>
                     <p>For any question, or just to say hello, get in touch and contact us.</p>
-                    <form method="POST"
-                          id="contactMeForm"
-                          name="contactForm"
-                          data-netlify="true"
-                          action="/contact/success/"
-                          data-netlify-recaptcha="true" 
-                          data-netlify-honeypot="bot-field">
-                        <input value="contactForm" name="contact" type="hidden" />
-                        <label>
-                            <span>Full name</span>
-                            <input type="text" name="Full name" v-model="name">
-                        </label>
-                        <label>
-                            <span>Email</span>
-                            <input type="email" name="Email" v-model="email">
-                        </label>
-                        <label>
-                            <span>Your message...</span>
-                            <textarea name="Your Message" v-model="message"></textarea>
-                        </label>
-                        <label>
-                            <div data-netifly-recaptcha="true"></div>
-                        </label>
-                        <button type="submit" 
-                                :class="[!hasValidFields ? 'disabled' : '']" 
-                                :disabled="!hasValidFields">
-                            Send Message
-                        </button>
-                    </form>
+                    <client-only>
+                        <form method="POST"
+                            id="contactMeForm"
+                            name="contactForm"
+                            data-netlify="true"
+                            action="/contact/success/"
+                            data-netlify-recaptcha="true" 
+                            data-netlify-honeypot="bot-field">
+                            <input value="contactForm" name="contact" type="hidden" />
+                            <label for="name">
+                                <span>Full name</span>
+                                <input type="text" name="name" v-model="name">
+                            </label>
+                            <label for="email">
+                                <span>Email</span>
+                                <input type="email" name="email" v-model="email">
+                            </label>
+                            <label for="message">
+                                <span>Your message...</span>
+                                <textarea name="message" v-model="message"></textarea>
+                            </label>
+                            <div>
+                                <div data-netifly-recaptcha="true"></div>
+                            </div>
+                            <button type="submit" 
+                                    :class="[!hasValidFields ? 'disabled' : '']" 
+                                    :disabled="!hasValidFields">
+                                Send Message
+                            </button>
+                        </form>
+                    </client-only>
                 </section>
             </section>
         </main>
