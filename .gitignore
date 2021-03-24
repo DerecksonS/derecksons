@@ -26,6 +26,12 @@ dist/
 # JetBrains IDE
 .idea/
 
+# Mac
+*.DS_Store
+
+# Progressive Web Apps
+sw.*
+
 # Unit test reports
 TEST*.xml
 
