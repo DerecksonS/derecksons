@@ -16,7 +16,6 @@
                             name="contactForm"
                             data-netlify="true"
                             action="/contact/success/"
-                            netlify-honeypot="bot-field"
                             enctype="multipart/form-data" netlify>
                             <input value="contactForm" name="contact" type="hidden" />
                             <label for="name">
@@ -31,9 +30,6 @@
                                 <span>Your message...</span>
                                 <textarea name="message" v-model="message"></textarea>
                             </label>
-                            <div>
-                                <div data-netifly-recaptcha="true"></div>
-                            </div>
                             <button type="submit" 
                                     :class="[!hasValidFields ? 'disabled' : '']" 
                                     :disabled="!hasValidFields">
