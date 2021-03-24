@@ -13,12 +13,12 @@
                     <p>For any question, or just to say hello, get in touch and contact us.</p>
                     <client-only>
                         <form method="POST"
-                            id="contactMeForm"
                             name="contactForm"
                             data-netlify="true"
                             action="/contact/success/"
                             data-netlify-recaptcha="true" 
-                            data-netlify-honeypot="bot-field">
+                            data-netlify-honeypot="bot-field"
+                            enctype="multipart/form-data">
                             <input value="contactForm" name="contact" type="hidden" />
                             <label for="name">
                                 <span>Full name</span>
