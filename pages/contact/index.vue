@@ -12,7 +12,7 @@
                     <h1>Contact me</h1>
                     <p>For any question, or just to say hello, get in touch and contact us.</p>
                     <client-only>
-                        <form method="POST"
+                        <form method="post"
                             name="contactForm"
                             data-netlify="true"
                             action="/contact/success/"
