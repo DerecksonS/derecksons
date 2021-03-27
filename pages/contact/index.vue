@@ -11,33 +11,31 @@
                 <section class="contact-form">
                     <h1>Contact me</h1>
                     <p>For any question, or just to say hello, get in touch and contact us.</p>
-                    <client-only>
-                        <form method="POST"
-                            id="contact_me"
-                            name="contact"
-                            data-netlify="true"
-                            action="/contact/success/"
-                            enctype="multipart/form-data" netlify>
-                            <input name="form-name" value="contact" type="hidden" />
-                            <label for="name">
-                                <span>Full name</span>
-                                <input type="text" name="name" v-model="name">
-                            </label>
-                            <label for="email">
-                                <span>Email</span>
-                                <input type="email" name="email" v-model="email">
-                            </label>
-                            <label for="message">
-                                <span>Your message...</span>
-                                <textarea name="message" v-model="message"></textarea>
-                            </label>
-                            <button type="submit" 
-                                    :class="[!hasValidFields ? 'disabled' : '']" 
-                                    :disabled="!hasValidFields">
-                                Send Message
-                            </button>
-                        </form>
-                    </client-only>
+                    <form method="POST"
+                        id="contact_me"
+                        name="contact"
+                        data-netlify="true"
+                        action="/contact/success/"
+                        data-netlify-honeypot="bot-field"
+                        enctype="multipart/form-data">
+                        <input name="form-name" value="contact" type="hidden" />
+                        <label for="name">
+                            <span>Full name</span>
+                            <input type="text" name="name" v-model="name">
+                        </label>
+                        <label for="email">
+                            <span>Email</span>
+                            <input type="email" name="email" v-model="email">
+                        </label>
+                        <label for="message">
+                            <span>Your message...</span>
+                            <textarea name="message" v-model="message"></textarea>
+                        </label>
+                        <button :class="[!hasValidFields ? 'disabled' : '']" 
+                                :disabled="!hasValidFields">
+                            Send Message
+                        </button>
+                    </form>
                 </section>
             </section>
         </main>
