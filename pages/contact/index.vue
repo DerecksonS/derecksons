@@ -13,11 +13,12 @@
                     <p>For any question, or just to say hello, get in touch and contact us.</p>
                     <client-only>
                         <form method="POST"
-                            name="contactForm"
+                            id="contact_me"
+                            name="contact"
                             data-netlify="true"
                             action="/contact/success/"
                             enctype="multipart/form-data" netlify>
-                            <input value="contactForm" name="contact" type="hidden" />
+                            <input name="form-name" value="contact" type="hidden" />
                             <label for="name">
                                 <span>Full name</span>
                                 <input type="text" name="name" v-model="name">
