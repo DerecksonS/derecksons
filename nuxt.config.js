@@ -63,8 +63,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    '@nuxtjs/style-resources',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/style-resources'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -118,12 +117,6 @@ export default {
       threshold: 10240,
       minRatio: 0.8,
     },
-  },
-  googleAnalytics: {
-    id: 'UA-188495398-1',
-    autoTracking: {
-      screenview: true
-    }
   },
   router: {
     linkActiveClass: 'active'
