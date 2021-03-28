@@ -1,6 +1,6 @@
 <template>
     <section>
-      <nuxt-link to="/">
+      <nuxt-link to="/" title="Dereckson Santana - Frontend Developer">
         <span class="logo">
           <svg class="logo-svg" x="0px" y="0px" viewBox="0 0 50.71 72.47" style="enable-background:new 0 0 50.71 72.47;">
             <path class="st0" d="M5.42,66.56l1.85,1.85c4.82,4.83,7.3,4.63,11.91,0l23.7-23.86c0.19-0.18,0.36-0.31,0.55-0.5l1.85-1.85

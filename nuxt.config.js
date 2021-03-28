@@ -3,7 +3,6 @@ let description = 'I am a Frontend Developer and tech lead with a vast experienc
 
 export default {
   target: 'static',
-  mode: 'universal',
   // server: {
   //   port: 3000, // default: 3000
   //   host: '0.0.0.0' // default: localhost
@@ -64,7 +63,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -118,6 +118,12 @@ export default {
       threshold: 10240,
       minRatio: 0.8,
     },
+  },
+  googleAnalytics: {
+    id: 'UA-188495398-1',
+    autoTracking: {
+      screenview: true
+    }
   },
   router: {
     linkActiveClass: 'active'
