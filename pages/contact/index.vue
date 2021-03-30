@@ -31,6 +31,9 @@
                             <span>Your message...</span>
                             <textarea name="message" v-model="message"></textarea>
                         </label>
+                        <div>
+                            <div data-netifly-recaptcha="true"></div>
+                        </div>
                         <button :class="[!hasValidFields ? 'disabled' : '']" 
                                 :disabled="!hasValidFields">
                             Send Message
